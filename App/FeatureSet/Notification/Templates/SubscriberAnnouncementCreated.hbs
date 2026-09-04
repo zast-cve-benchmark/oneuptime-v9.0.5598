@@ -1,0 +1,26 @@
+{{> Start this}}
+
+{{> CustomLogo this}}
+{{> EmailTitle title=(concat "Announcement: " announcementTitle) }}
+
+{{> InfoBlock info=(concat "A new announcement has been created for : " statusPageName) }}
+
+{{> DetailBoxStart this }}
+{{> DetailBoxField title=announcementTitle text="" }}
+{{> DetailBoxField title="" text=announcementDescription  }}
+{{> DetailBoxEnd this }}
+
+{{> InfoBlock info=(concat subscriberEmailNotificationFooterText "") }}
+
+
+{{#if detailsUrl}}
+{{> InfoBlock info=(concat "Find further information here: " detailsUrl)}}
+{{else}}
+{{> InfoBlock info=(concat "Find further information here: " statusPageUrl)}}
+{{/if}}
+
+{{> UnsubscribeBlock this}}
+
+{{> VerticalSpace this}}
+
+{{> End this}}

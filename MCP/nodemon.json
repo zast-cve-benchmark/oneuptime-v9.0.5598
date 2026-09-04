@@ -1,0 +1,6 @@
+{
+  "watch": ["Index.ts"],
+  "ext": "ts,tsx",
+  "ignore": ["./node_modules/**", "./public/**", "./bin/**", "./build/**"],
+  "exec": "npm start"
+}

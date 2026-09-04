@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" id="home">
+
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+
+<head>
+  <title>
+    OneUptime Blog - Latest posts on Observability, Monitoring, Reliability and more.
+  </title>
+  <meta name="description" content="Learn more about Observability, Monitoring, Reliability and more.">
+  <%- include('../head') -%>
+
+
+</head>
+
+
+<body>
+  <%- include('../nav') -%>
+
+    <div class="relative isolate overflow-hidden bg-white">
+      <div class="py-24 sm:py-32">
+
+        <div class="mx-auto max-w-7xl px-6 lg:px-8">
+          <%- include('./Partials/BlogTitleAndDescription', { title: 'Latest posts on '+tagName, smallTitle: "", description: 'Here are some of the latest posts on '+tagName }) -%>
+          <div class="mt-16">
+            <% if(blogPosts.length> 0){ %>
+              <div class="grid grid-cols-1 gap-10 sm:grid-cols-2 xl:grid-cols-3">
+                <% for(var i=0; i<blogPosts.length; i++) { %>
+                  <%- include('./Partials/ListItem', { blogPost: blogPosts[i] }) -%>
+                <% } %>
+              </div>
+              <%- include('./Partials/Pagination', { page: page, pageSize: pageSize, totalPages: totalPages, totalPosts: totalPosts, basePath: basePath }) -%>
+            <% } else { %>
+              <div class="text-center text-gray-600 text-lg py-12">No posts found for this tag.</div>
+            <% } %>
+            <div class="mt-20">
+              <%- include('./Partials/OpenSourceCommitment', {blogPost: null}) -%>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+
+
+
+    <%- include('./Partials/BlogCta') -%>
+      <%- include('../footer') -%>
+</body>
+
+</html>

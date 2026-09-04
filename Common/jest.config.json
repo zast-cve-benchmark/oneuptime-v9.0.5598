@@ -1,0 +1,47 @@
+{
+    "preset": "ts-jest",
+    "testPathIgnorePatterns": [
+        "node_modules",
+        "dist"
+    ],
+    "verbose": true,
+    "globals": {
+        "ts-jest": {
+            "tsconfig": "tsconfig.json",
+            "babelConfig": false
+        }
+    },
+    "modulePathIgnorePatterns": [
+        "<rootDir>/build/dist"
+    ],
+    "moduleNameMapper": {
+        "Common/(.*)": "<rootDir>/$1"
+    },
+    "moduleFileExtensions": [
+        "ts",
+        "tsx",
+        "js",
+        "json"
+    ],
+    "transform": {
+        ".(ts|tsx)": "ts-jest"
+    },
+    "testEnvironment": "node",
+    "collectCoverage": false,
+    "coverageReporters": [
+        "text",
+        "lcov"
+    ],
+    "testRegex": "./Tests/(.*)\\.test\\.(ts|tsx)$",
+    "collectCoverageFrom": [
+        "./**/*.{ts,tsx}"
+    ],
+    "coverageThreshold": {
+        "global": {
+            "lines": 0,
+            "functions": 0,
+            "branches": 0,
+            "statements": 0
+        }
+    }
+}
